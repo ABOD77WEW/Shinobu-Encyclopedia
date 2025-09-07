@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>موسوعة الشينوبو</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Cairo', 'sans-serif'],
+            },
+            colors: {
+              'parchment': '#F5EFE6',
+              'ink-dark': '#121826',
+              'seal-red': {
+                DEFAULT: '#B91C1C',
+                'light': '#DC2626',
+                'dark': '#991B1B',
+              },
+              'scroll-gold': '#D97706',
+              'text-light': '#E5E7EB',
+              'text-dark': '#1F2937',
+              // Akatsuki Theme Colors
+              'akatsuki-bg': '#1a1a1a',
+              'akatsuki-red': '#ef4444',
+            },
+            backgroundImage: {
+               'parchment-texture': "url('https://www.transparenttextures.com/patterns/old-paper.png')",
+               'dark-texture': "url('https://www.transparenttextures.com/patterns/dark-denim-3.png')",
+               'akatsuki-border-glow': "conic-gradient(from 180deg at 50% 50%, #1a1a1a 0%, #991B1B 40%, #ef4444 50%, #991B1B 60%, #1a1a1a 100%)",
+            },
+            boxShadow: {
+              'glow-red-dark': '0 0 15px 5px rgba(153, 27, 27, 0.6)',
+              'glow-gold': '0 0 15px 5px rgba(217, 119, 6, 0.4)',
+              'navbar-glow': '0 5px 20px -5px rgba(185, 28, 28, 0.5)',
+              'glow-green': '0 0 15px 5px rgba(22, 163, 74, 0.7)',
+              'glow-red': '0 0 15px 5px rgba(220, 38, 38, 0.7)',
+            },
+            keyframes: {
+              'page-transition': {
+                '0%': { opacity: '0', transform: 'translateY(15px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'pro-glow': {
+                '0%, 100%': { filter: 'drop-shadow(0 0 4px rgba(220, 38, 38, 0.6))' },
+                '50%': { filter: 'drop-shadow(0 0 12px rgba(220, 38, 38, 0.9))' },
+              },
+               'screen-shatter': {
+                '0%': { opacity: 0, transform: 'scale(0.5)' },
+                '50%': { opacity: 1, transform: 'scale(1.1)' },
+                '100%': { opacity: 0, transform: 'scale(1.2)' }
+              },
+              'flashback-flicker': {
+                '0%, 100%': { opacity: 0 },
+                '5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%': { opacity: 1 },
+                '10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%': { opacity: 0 }
+              },
+              'mangekyou-reveal': {
+                '0%': { transform: 'scale(0.5) rotate(0deg)', filter: 'brightness(1) drop-shadow(0 0 5px #ef4444)' },
+                '60%': { transform: 'scale(1.2) rotate(720deg)', filter: 'brightness(3) drop-shadow(0 0 25px #ef4444)' },
+                '100%': { transform: 'scale(1)', filter: 'brightness(1.5) drop-shadow(0 0 15px #ef4444)' }
+              },
+              'chakra-shockwave': {
+                '0%': { transform: 'scale(0)', opacity: '0.8' },
+                '100%': { transform: 'scale(3)', opacity: '0' }
+              },
+              'chakra-text-reveal': {
+                '0%': { opacity: '0', textShadow: '0 0 30px #fca5a5', transform: 'scale(1.5)' },
+                '100%': { opacity: '1', textShadow: '0 0 10px #fca5a5', transform: 'scale(1)' }
+              },
+              slideInLeft: {
+                '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                '100%': { transform: 'translateX(0)', opacity: '1' },
+              },
+              slideInRight: {
+                '0%': { transform: 'translateX(100%)', opacity: '0' },
+                '100%': { transform: 'translateX(0)', opacity: '1' },
+              },
+              'chakra-clash': {
+                '0%': { transform: 'scale(0.5)', opacity: '0' },
+                '50%': { transform: 'scale(1.2)', opacity: '1' },
+                '100%': { transform: 'scale(2.5)', opacity: '0' },
+              },
+              'chakra-flow-left': {
+                '0%': { transform: 'translateX(-100%) scaleX(0)', opacity: '0.5' },
+                '40%': { transform: 'translateX(-50%) scaleX(1)', opacity: '1' },
+                '60%': { transform: 'translateX(-50%) scaleX(1)', opacity: '1' },
+                '100%': { transform: 'translateX(0%) scaleX(0)', opacity: '0.5' },
+              },
+              'chakra-flow-right': {
+                '0%': { transform: 'translateX(100%) scaleX(0)', opacity: '0.5' },
+                '40%': { transform: 'translateX(50%) scaleX(1)', opacity: '1' },
+                '60%': { transform: 'translateX(50%) scaleX(1)', opacity: '1' },
+                '100%': { transform: 'translateX(0%) scaleX(0)', opacity: '0.5' },
+              },
+              'chakra-glow-text': {
+                '0%, 100%': { textShadow: '0 0 6px rgba(239, 68, 68, 0.7), 0 0 10px rgba(239, 68, 68, 0.4)' },
+                '50%': { textShadow: '0 0 12px rgba(252, 165, 165, 0.9), 0 0 24px rgba(239, 68, 68, 0.7)' },
+              },
+              'swirl-chakra': {
+                '0%': { transform: 'rotate(0deg) scale(1.5)' },
+                '100%': { transform: 'rotate(360deg) scale(1.5)' }
+              },
+              'eye-glow': {
+                  '0%, 100%': { opacity: '0', transform: 'scale(0.8)' },
+                  '50%': { opacity: '0.7', transform: 'scale(1)' },
+              },
+               'genjutsu-fail': {
+                '0%': { opacity: '1', filter: 'blur(0px)' },
+                '100%': { opacity: '0', filter: 'blur(8px)' },
+              },
+              'border-glow-spin': {
+                '0%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg)' },
+              },
+              'chakra-pulse': {
+                '0%, 100%': { 
+                  filter: 'drop-shadow(0 0 6px rgba(239, 68, 68, 0.7))',
+                  transform: 'scale(1)' 
+                },
+                '50%': { 
+                  filter: 'drop-shadow(0 0 25px rgba(239, 68, 68, 1)) drop-shadow(0 0 15px rgba(252, 165, 165, 0.7))',
+                  transform: 'scale(1.1)' 
+                },
+              },
+              'eight-gates-aura': {
+                '0%': { boxShadow: '0 0 10px 5px rgba(220, 38, 38, 0.5), inset 0 0 10px 3px rgba(220, 38, 38, 0.4)' },
+                '50%': { boxShadow: '0 0 40px 20px rgba(239, 68, 68, 0.8), inset 0 0 20px 8px rgba(252, 165, 165, 0.6)' },
+                '100%': { boxShadow: '0 0 10px 5px rgba(220, 38, 38, 0.5), inset 0 0 10px 3px rgba(220, 38, 38, 0.4)' },
+              },
+              'mangekyou-transform': {
+                '0%, 100%': { transform: 'rotate(0deg) scale(1)', filter: 'drop-shadow(0 0 6px rgba(239, 68, 68, 0.7))' },
+                '20%': { transform: 'rotate(720deg) scale(1.2)', filter: 'drop-shadow(0 0 30px rgba(239, 68, 68, 1))' },
+                '80%': { transform: 'rotate(720deg) scale(1.2)', filter: 'drop-shadow(0 0 30px rgba(239, 68, 68, 1))' },
+              },
+              'glitch-effect': {
+                '0%': { transform: 'translate(0)' },
+                '10%': { transform: 'translate(-2px, 2px)' },
+                '20%': { transform: 'translate(2px, -2px)' },
+                '30%': { transform: 'translate(-2px, -2px)' },
+                '40%': { transform: 'translate(2px, 2px)' },
+                '50%': { transform: 'translate(0)', filter: 'blur(0.5px) contrast(1.5)' },
+                '60%': { transform: 'translate(-2px, 2px)' },
+                '70%': { transform: 'translate(2px, -2px)' },
+                '80%': { transform: 'translate(-2px, -2px)' },
+                '90%': { transform: 'translate(2px, 2px)' },
+                '100%': { transform: 'translate(0)', filter: 'blur(0) contrast(1)' },
+              },
+              'crack-spread': {
+                '0%': { opacity: 0.5, 'clip-path': 'polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%)' },
+                '100%': { opacity: 1, 'clip-path': 'polygon(0 0, 100% 0, 100% 25%, 0 50%, 0 100%, 100% 100%)' }
+              },
+              'fade-out-slow': {
+                '0%': { opacity: '1' },
+                '100%': { opacity: '0' }
+              },
+              'text-reveal-blur': {
+                '0%': { filter: 'blur(8px)', opacity: '0' },
+                '100%': { filter: 'blur(0)', opacity: '1' }
+              }
+            },
+            animation: {
+              'page-transition': 'page-transition 0.5s ease-out forwards',
+              'spin-slow': 'spin 8s linear infinite',
+              'pro-glow': 'pro-glow 2.5s ease-in-out infinite',
+              'genjutsu-fail': 'genjutsu-fail 0.8s ease-in-out forwards',
+              'slide-in-left': 'slideInLeft 1s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+              'slide-in-right': 'slideInRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+              'chakra-clash': 'chakra-clash 1.5s ease-in-out forwards',
+              'chakra-flow-left': 'chakra-flow-left 2.5s ease-in-out forwards',
+              'chakra-flow-right': 'chakra-flow-right 2.5s ease-in-out forwards',
+              'chakra-glow-text': 'chakra-glow-text 4s ease-in-out infinite',
+              'swirl-chakra': 'swirl-chakra 120s linear infinite',
+              'eye-glow': 'eye-glow 10s ease-in-out infinite',
+              'border-glow-spin': 'border-glow-spin 2.5s linear infinite',
+              'chakra-pulse': 'chakra-pulse 5s ease-in-out infinite',
+              'eight-gates-aura': 'eight-gates-aura 1.5s ease-in-out infinite',
+              'mangekyou-transform': 'mangekyou-transform 5s ease-in-out forwards',
+              'screen-shatter': 'screen-shatter 0.5s ease-in-out forwards',
+              'flashback-flicker': 'flashback-flicker 1.5s steps(1, end) forwards',
+              'mangekyou-reveal': 'mangekyou-reveal 1s ease-in-out forwards',
+              'chakra-shockwave': 'chakra-shockwave 0.8s ease-out forwards',
+              'chakra-text-reveal': 'chakra-text-reveal 1.2s ease-out forwards',
+              'glitch': 'glitch-effect 0.4s linear forwards',
+              'crack-spread': 'crack-spread 0.8s ease-out forwards',
+              'fade-out-slow': 'fade-out-slow 1s ease-in forwards',
+              'text-reveal-blur': 'text-reveal-blur 1.2s cubic-bezier(0.5, 1, 0.5, 1) forwards'
+            }
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.8.2"
+  }
+}
+</script>
+</head>
+  <body class="bg-parchment text-text-dark dark:bg-ink-dark dark:text-text-light font-sans bg-parchment-texture dark:bg-dark-texture transition-colors duration-500 [.akatsuki-theme_&]:bg-gradient-to-b [.akatsuki-theme_&]:from-akatsuki-bg [.akatsuki-theme_&]:via-seal-red-dark [.akatsuki-theme_&]:to-akatsuki-bg">
+    <div id="root"></div>
+  </body>
+</html>
