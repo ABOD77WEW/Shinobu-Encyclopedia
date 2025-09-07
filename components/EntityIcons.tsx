@@ -1,5 +1,5 @@
 import React from 'react';
-import { EntitySymbol } from '../types';
+import { EntitySymbol } from '../types.ts';
 
 const emojiMap: Record<number, string> = {
     [EntitySymbol.NarutoUzumaki]: '🍥',

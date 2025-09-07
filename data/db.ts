@@ -1,10 +1,10 @@
 import React from 'react';
-import { Character, Arc, Ability, Organization, EyeTechnique, AbilityType, EntitySymbol, ChakraNature, QuizQuestion, Scroll } from '../types';
+import { Character, Arc, Ability, Organization, EyeTechnique, AbilityType, EntitySymbol, ChakraNature, QuizQuestion, Scroll } from '../types.ts';
 import { 
     AkatsukiCloudIcon, SharinganIcon, RinneganIcon, ByakuganIcon, MangekyouSharinganIcon, TenseiganIcon,
     AlliedShinobiForcesIcon, RootAnbuIcon, UchihaFanIcon, TwelveGuardianNinjaIcon, KonohaPoliceIcon, SamuraiIcon,
     SevenSwordsmenIcon, SoundFourIcon, KetsuryuganIcon, KonohaAnbuIcon
-} from '../components/ThematicIcons';
+} from '../components/ThematicIcons.tsx';
 
 
 export const characters: Character[] = [

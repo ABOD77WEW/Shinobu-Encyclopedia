@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useShinobiPro } from '../hooks/useShinobiPro';
+import { useShinobiPro } from '../hooks/useShinobiPro.tsx';
 import { useNavigate } from 'react-router-dom';
-import { ByakuganIcon, ProSharinganIcon } from './ThematicIcons';
+import { ByakuganIcon, ProSharinganIcon } from './ThematicIcons.tsx';
 
 const FeatureCard: React.FC<{ icon: React.ReactNode, title: string, description: string }> = ({ icon, title, description }) => (
     <div className="bg-ink-dark/50 backdrop-blur-sm p-6 rounded-lg border-2 border-seal-red/50 transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-glow-red-dark">

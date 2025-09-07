@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { db } from '../data/db';
-import { FavoriteItem } from '../types';
-import { SearchIcon } from './Icons';
-import { ProSharinganIcon } from './ThematicIcons';
+import { db } from '../data/db.ts';
+import { FavoriteItem } from '../types.ts';
+import { SearchIcon } from './Icons.tsx';
+import { ProSharinganIcon } from './ThematicIcons.tsx';
 
 const SearchInput: React.FC = () => {
     const [query, setQuery] = useState('');

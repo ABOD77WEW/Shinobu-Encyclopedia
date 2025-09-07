@@ -1,18 +1,18 @@
 // FIX: Import `useEffect` from react to resolve usage in ProRoute component.
 import React, { useState, createContext, useContext, useMemo, useEffect } from 'react';
 import { HashRouter, Routes, Route, Link, NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { useTheme, Theme } from './hooks/useTheme';
-import { useFavorites } from './hooks/useFavorites';
-import { db } from './data/db';
-import { Character, Arc, Ability, Organization, EyeTechnique, FavoriteItem, ChakraNature, Scroll, EntitySymbol } from './types';
-import { SunIcon, MoonIcon, SearchIcon, StarIcon } from './components/Icons';
-import PageWrapper from './components/PageWrapper';
-import { EntityAvatar } from './components/EntityIcons';
+import { useTheme, Theme } from './hooks/useTheme.tsx';
+import { useFavorites } from './hooks/useFavorites.tsx';
+import { db } from './data/db.ts';
+import { Character, Arc, Ability, Organization, EyeTechnique, FavoriteItem, ChakraNature, Scroll, EntitySymbol } from './types.ts';
+import { SunIcon, MoonIcon, SearchIcon, StarIcon } from './components/Icons.tsx';
+import PageWrapper from './components/PageWrapper.tsx';
+import { EntityAvatar } from './components/EntityIcons.tsx';
 // FIX: Import `ByakuganIcon` which was missing.
-import { AkatsukiCloudIcon, SharinganIcon, UchihaFanIcon, ByakuganIcon, ProSharinganIcon, VSCompareIcon, SettingsIcon } from './components/ThematicIcons';
-import { ShinobiProProvider, useShinobiPro } from './hooks/useShinobiPro';
-import ShinobiProPage from './components/ShinobiProPage';
-import ShinobiProFeaturesPage from './components/ShinobiProFeaturesPage';
+import { AkatsukiCloudIcon, SharinganIcon, UchihaFanIcon, ByakuganIcon, ProSharinganIcon, VSCompareIcon, SettingsIcon } from './components/ThematicIcons.tsx';
+import { ShinobiProProvider, useShinobiPro } from './hooks/useShinobiPro.tsx';
+import ShinobiProPage from './components/ShinobiProPage.tsx';
+import ShinobiProFeaturesPage from './components/ShinobiProFeaturesPage.tsx';
 
 
 // --- App Context for data ---

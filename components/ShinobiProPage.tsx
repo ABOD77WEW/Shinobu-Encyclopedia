@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useShinobiPro } from '../hooks/useShinobiPro';
-import { db } from '../data/db';
-import { ProSharinganIcon, RinneganIcon, UchihaFanIcon, AkatsukiCloudIcon } from './ThematicIcons';
+import { useShinobiPro } from '../hooks/useShinobiPro.tsx';
+import { db } from '../data/db.ts';
+import { ProSharinganIcon, RinneganIcon, UchihaFanIcon, AkatsukiCloudIcon } from './ThematicIcons.tsx';
 import { useNavigate } from 'react-router-dom';
 
 const GenjutsuFailureAnimation = ({ onComplete }: { onComplete: () => void }) => {
